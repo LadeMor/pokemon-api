@@ -1,0 +1,242 @@
+h1, p{
+    margin: 0px;
+    font-family: "Poppins", serif;
+}
+
+.card{
+    width: 360px;
+    height: 640px;
+    background-color: #F9CF30;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.card-top-panel{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-top-panel p{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.card-top-panel-title{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-top-panel-title img{
+    width: 32px;
+    height: 32px;
+}
+
+.card-top-panel-title h1{
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/**********************************************************/
+
+
+.stats-block{
+    background-color: white;
+    height: 412px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: inset 0 0px 5px grey;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.stats-image-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+   
+}
+
+.pokemon-image{
+    position: absolute;
+    top: -140px;
+    width: 200px;
+}
+
+.pokemon-information{
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.pokemon-tag-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.pokemon-tag{
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    color: white;
+    background-color: #F9CF30;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.pokemon-description-title{
+    text-align: center;
+    color: #F9CF30;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    margin-bottom: 16px;
+}
+
+.pokemon-stats-description{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.pokemon-stats-description-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.pokemon-stats-description-item-title{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-item{
+    border-right: 1px solid #E0E0E0;
+    border-left: 1px solid #E0E0E0;
+}
+
+.pokemon-weight-text{
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.pokemons-move-list{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
+}
+
+.pokemon-stat-name{
+    color: #666666;
+    font-size: 8px;
+    line-height: 12px;
+}
+
+/******************************************************************************************/
+
+.pokemon-description{
+    text-align: start;
+    color: #1D1D1D;
+    font-size: 10px;
+    line-height: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 16px;
+}
+
+
+/*****************************************************************************************/
+
+
+.pokemon-base-stats{
+    height: 100%;
+
+}
+
+.pokemon-base-stats-title{
+    text-align: center;
+    color: #F9CF30;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.vertical-line{
+    height: 96px;
+    width: 1px;
+    background-color: #E0E0E0;
+}
+
+.pokemon-base-stats-attitude-title-list p{
+    color: #F9CF30;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.pokemon-base-stats-attitude{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+}
+
+
+
+.pokemon-base-stats-attitude-list{
+    width: 100%;
+}
+
+.pokemon-base-stats-attitude-list-item{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+}
+
+.pokemon-base-stats-attitude-list-item p{
+    color: #1D1D1D;
+    font-size: 10px;
+    line-height: 16px;
+
+}   
+
+.pokemon-stat-proggres-bar-bg{
+    width: 100%;
+    flex-grow: 1;
+    height: 4px;
+    background-color: #f9cd306f;
+    border-radius: 4px;
+}
+
+.pokemon-stat-proggres-bar-fill{
+    background-color: #F9CF30;
+    height: 100%;
+    width: 40%;
+}
