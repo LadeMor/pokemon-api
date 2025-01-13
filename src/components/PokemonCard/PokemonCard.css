@@ -1,3 +1,8 @@
+:root{
+    --pokemon-main-color:#F9CF30;
+    --pokemon-opacity-color:#f9cd306f;
+}
+
 h1, p{
     margin: 0px;
     font-family: "Poppins", serif;
@@ -6,7 +11,7 @@ h1, p{
 .card{
     width: 360px;
     height: 640px;
-    background-color: #F9CF30;
+    background-color: var(--pokemon-main-color);
     padding: 4px;
     display: flex;
     flex-direction: column;
@@ -70,7 +75,7 @@ h1, p{
 .pokemon-image{
     position: absolute;
     top: -140px;
-    width: 200px;
+    width: 250px;
 }
 
 .pokemon-information{
@@ -94,14 +99,14 @@ h1, p{
     font-weight: bold;
     line-height: 16px;
     color: white;
-    background-color: #F9CF30;
+    background-color:  var(--pokemon-main-color);
     padding: 2px 8px;
     border-radius: 10px;
 }
 
 .pokemon-description-title{
     text-align: center;
-    color: #F9CF30;
+    color:  var(--pokemon-main-color);
     font-size: 14px;
     font-weight: bold;
     line-height: 16px;
@@ -177,7 +182,7 @@ h1, p{
 
 .pokemon-base-stats-title{
     text-align: center;
-    color: #F9CF30;
+    color:  var(--pokemon-main-color);
     font-size: 14px;
     line-height: 16px;
     font-weight: bold;
@@ -191,7 +196,7 @@ h1, p{
 }
 
 .pokemon-base-stats-attitude-title-list p{
-    color: #F9CF30;
+    color:  var(--pokemon-main-color);
     font-size: 10px;
     line-height: 16px;
 }
@@ -231,12 +236,14 @@ h1, p{
     width: 100%;
     flex-grow: 1;
     height: 4px;
-    background-color: #f9cd306f;
+    background-color: var(--pokemon-opacity-color);
     border-radius: 4px;
 }
 
 .pokemon-stat-proggres-bar-fill{
-    background-color: #F9CF30;
+    background-color:  var(--pokemon-main-color);
     height: 100%;
     width: 40%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
