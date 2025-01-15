@@ -6,6 +6,8 @@ import list_icon from "../../assets/icons/list.png";
 import panels_icon from "../../assets/icons/panels.png";
 import search from "../../assets/icons/search.png";
 
+import pikachu from "../../assets/images/pikachu.png";
+
 const Main = () => {
     return (
         <>
@@ -38,7 +40,48 @@ const Main = () => {
                     </div>
                     <section id="pokemons">
                         <div className="pokemon-list">
-
+                            <div className="pokemon-item">
+                                 <p className="pokemon-item-number">#025</p>
+                                 <div className="bottom-panel">
+                                    <img src={pikachu} alt="Pokemon"/>
+                                    <h2>Pikachu</h2>
+                                 </div>
+                            </div>
+                            <div className="pokemon-item">
+                                 <p className="pokemon-item-number">#025</p>
+                                 <div className="bottom-panel">
+                                    <img src={pikachu} alt="Pokemon"/>
+                                    <h2>Pikachu</h2>
+                                 </div>
+                            </div>
+                            <div className="pokemon-item">
+                                 <p className="pokemon-item-number">#025</p>
+                                 <div className="bottom-panel">
+                                    <img src={pikachu} alt="Pokemon"/>
+                                    <h2>Pikachu</h2>
+                                 </div>
+                            </div>
+                            <div className="pokemon-item">
+                                 <p className="pokemon-item-number">#025</p>
+                                 <div className="bottom-panel">
+                                    <img src={pikachu} alt="Pokemon"/>
+                                    <h2>Pikachu</h2>
+                                 </div>
+                            </div>
+                            <div className="pokemon-item">
+                                 <p className="pokemon-item-number">#025</p>
+                                 <div className="bottom-panel">
+                                    <img src={pikachu} alt="Pokemon"/>
+                                    <h2>Pikachu</h2>
+                                 </div>
+                            </div>
+                            <div className="pokemon-item">
+                                 <p className="pokemon-item-number">#025</p>
+                                 <div className="bottom-panel">
+                                    <img src={pikachu} alt="Pokemon"/>
+                                    <h2>Pikachu</h2>
+                                 </div>
+                            </div>
                         </div>
                     </section>
                 </div>  
