@@ -143,6 +143,7 @@
 }
 
 .bottom-panel img{
+    width: 200px;
     position: absolute;
     top: -120px;
 }
