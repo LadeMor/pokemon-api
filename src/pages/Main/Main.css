@@ -121,7 +121,11 @@
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-   
+    transition: 0.3s;
+}
+
+.pokemon-item:hover{
+    transform: scale(1.2);
 }
 
 .pokemon-item-number{
@@ -151,4 +155,32 @@
 .bottom-panel h2{
     font-size: 24px;
     font-weight: 400;
+}
+
+/*******************************************************/
+
+.paggination-handle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.paggination-handle img{
+    width: 40px;
+    background-color: #DC0A2D;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+    padding: 5px;
+}
+
+
+.paggination-handle img:hover{
+    transform: scale(1.2);
+}
+
+.paggination-handle img:active{
+    transform: scale(0.9);
 }

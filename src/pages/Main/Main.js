@@ -6,6 +6,8 @@ import list_icon from "../../assets/icons/list.png";
 import panels_icon from "../../assets/icons/panels.png";
 import search from "../../assets/icons/search.png";
 
+import right_arrow from "../../assets/icons/arrow-ios-forward.svg";
+import left_arrow from "../../assets/icons/arrow-ios-back.svg";
 
 import { useEffect, useState } from "react";
 import { upperCaseFirstLetter, baseStatFormat } from "../../components/formatFunctions";
@@ -14,19 +16,22 @@ const Main = () => {
 
     const [pokemonList, setPokemonList] = useState([]);
     const [pokemonImages, setPokemonImages] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const limit = 15;
 
     useEffect(() => {
 
         const fetchPokemons = async () => {
-            const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=15&offset=0");
+            const offset = (currentPage - 1) * limit;
 
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}=0`);
+            console.log(response);
             if (!response.ok) {
                 console.error(`Error while fetching ${response.status}`);
             } else {
                 const result = await response.json();
                 
                 setPokemonList(result.results);
-                
 
                 const images = await Promise.all(
                     result.results.map(async (pokemon) => {
@@ -34,14 +39,18 @@ const Main = () => {
                         return data;
                     })
                 );
-                console.log(images);
                 setPokemonImages(images);
+
             }
         }
 
         fetchPokemons();
 
-    }, [])
+    }, [currentPage])
+
+    useEffect(() => {
+        //console.log(pokemonList);
+    }, [pokemonList])
 
     const fetchPokemonDataByUrl = async (url) => {
         try{
@@ -64,13 +73,17 @@ const Main = () => {
         }
 
     }
-  
-    useEffect(() => {
-        console.log(pokemonImages);
-        if(pokemonImages.length == pokemonList.length){
-            console.log(pokemonImages);
+
+    const handleNextPage = () => {
+        setCurrentPage(currentPage => currentPage + 1);
+    }
+
+    const handlePreviousPage = () => {
+        if(currentPage > 1){
+            setCurrentPage(currentPage => currentPage - 1);
         }
-    }, [pokemonImages])
+    }
+
 
     return (
         <>
@@ -104,7 +117,7 @@ const Main = () => {
                     <section id="pokemons">
                         <div className="pokemon-list">
                             {
-                                pokemonList.map((item, index) => (
+                                pokemonList.length > 0 ? pokemonList.map((item, index) => (
                                     <div className="pokemon-item" key={index}>
                                         <p className="pokemon-item-number">#{pokemonImages[index] && baseStatFormat(pokemonImages[index].id) }</p>
                                         <div className="bottom-panel">
@@ -113,8 +126,15 @@ const Main = () => {
                                         </div>
                                     </div>
                                 ))
+                                :
+                                <h1>Loading...</h1>
                             }
 
+                        </div>
+                        <div className="paggination-handle">
+                            <img src={left_arrow} alt="Left arrow" onClick={handlePreviousPage}/>
+                            <h3>{currentPage}</h3>
+                            <img src={right_arrow} alt="Right arrow" onClick={handleNextPage}/>
                         </div>
                     </section>
                 </div>
