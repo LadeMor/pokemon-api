@@ -6,11 +6,12 @@ import list_icon from "../../assets/icons/list.png";
 import panels_icon from "../../assets/icons/panels.png";
 import search from "../../assets/icons/search.png";
 
-import right_arrow from "../../assets/icons/arrow-ios-forward.svg";
-import left_arrow from "../../assets/icons/arrow-ios-back.svg";
 
 import { useEffect, useState } from "react";
 import { upperCaseFirstLetter, baseStatFormat } from "../../components/formatFunctions";
+import PokemonList from "../../components/PokemonList/PokemonList";
+import PokemonCard from "../../components/PokemonCard/PokemonCard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Main = () => {
 
@@ -87,58 +88,46 @@ const Main = () => {
 
     return (
         <>
-            <section id="main">
-                <div className="rigth-panel">
-                    <div className="pokemon-logo-container">
-                        <img src={pokemon_logo} className="pokemon-logo" />
-                        <h1>Pokemon Card Checker</h1>
-                    </div>
-                </div>
-                <div className="main-content">
-                    <div className="app-panel">
-                        <h1>Pokemons 1365</h1>
-                        <div className="search-input-container">
-                            <input type="text" />
-                            <button>
-                                <img src={search} />
-                            </button>
-                        </div>
-                        <div className="app-buttons-group">
-                            <button className="app-panel-btn">
-                                <img src={list_icon} alt="List icon" />
-                                List
-                            </button>
-                            <button className="app-panel-btn active-button">
-                                <img src={panels_icon} alt="Panels icon" />
-                                Blocks
-                            </button>
+            <BrowserRouter>
+                <section id="main">
+                    <div className="rigth-panel">
+                        <div className="pokemon-logo-container">
+                            <img src={pokemon_logo} className="pokemon-logo" />
+                            <h1>Pokemon Card Checker</h1>
                         </div>
                     </div>
-                    <section id="pokemons">
-                        <div className="pokemon-list">
-                            {
-                                pokemonList.length > 0 ? pokemonList.map((item, index) => (
-                                    <div className="pokemon-item" key={index}>
-                                        <p className="pokemon-item-number">#{pokemonImages[index] && baseStatFormat(pokemonImages[index].id) }</p>
-                                        <div className="bottom-panel">
-                                            <img src={pokemonImages[index] && pokemonImages[index].sprites.front_default } alt="Pokemon" />
-                                            <h2>{upperCaseFirstLetter(item.name)}</h2>
-                                        </div>
-                                    </div>
-                                ))
-                                :
-                                <h1>Loading...</h1>
-                            }
-
+                    <div className="main-content">
+                        <div className="app-panel">
+                            <h1>Pokemons 1365</h1>
+                            <div className="search-input-container">
+                                <input type="text" />
+                                <button>
+                                    <img src={search} />
+                                </button>
+                            </div>
+                            <div className="app-buttons-group">
+                                <button className="app-panel-btn">
+                                    <img src={list_icon} alt="List icon" />
+                                    List
+                                </button>
+                                <button className="app-panel-btn active-button">
+                                    <img src={panels_icon} alt="Panels icon" />
+                                    Blocks
+                                </button>
+                            </div>
                         </div>
-                        <div className="paggination-handle">
-                            <img src={left_arrow} alt="Left arrow" onClick={handlePreviousPage}/>
-                            <h3>{currentPage}</h3>
-                            <img src={right_arrow} alt="Right arrow" onClick={handleNextPage}/>
-                        </div>
-                    </section>
-                </div>
-            </section>
+                        <Routes>
+                            <Route path="/" element={<PokemonList 
+                                pokemonList={pokemonList} 
+                                handlePreviousPage={handlePreviousPage}
+                                handleNextPage={handleNextPage}
+                                currentPage={currentPage}
+                                pokemonImages={pokemonImages}/>}/>
+                            <Route path="/pokemon/:pokemon_id" element={<PokemonCard/>}/>
+                        </Routes>
+                    </div>
+                </section>
+            </BrowserRouter>
         </>
     );
 }

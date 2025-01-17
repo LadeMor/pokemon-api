@@ -8,6 +8,13 @@ h1, p{
     font-family: "Poppins", serif;
 }
 
+#pokemon-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
 .card{
     width: 360px;
     height: 640px;
